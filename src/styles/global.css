@@ -382,13 +382,15 @@ input, select, textarea { font-family: var(--ff-body); cursor: auto; }
 }
 .hero-boomerang-photo {
   width: 100%;
-  animation: float 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 60px rgba(232,160,32,0.3));
+  display: block;
+  animation: float 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 50px rgba(255,90,46,0.18));
+  -webkit-mask-image: radial-gradient(closest-side, black 62%, transparent 100%);
+  mask-image: radial-gradient(closest-side, black 62%, transparent 100%);
 }
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(8deg); }
-  66% { transform: translateY(10px) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
 }
 .hero-orbit {
   position: absolute;
@@ -1556,8 +1558,6 @@ footer {
   padding-top: 40px;
 }
 .product-gallery {
-  position: sticky;
-  top: 96px;
   height: fit-content;
 }
 .main-image {

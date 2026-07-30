@@ -30,18 +30,18 @@ export const Hero: React.FC = () => {
         .fromTo('.hero-desc', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
         .fromTo('.hero-actions', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
         .fromTo('.hero-stats > *', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08 }, '-=0.35')
-        .fromTo(visualRef.current, { opacity: 0, scale: 0.9, rotate: -8 }, { opacity: 1, scale: 1, rotate: 0, duration: 1 }, '-=0.9');
+        .fromTo(visualRef.current, { opacity: 0, scale: 0.94, rotate: -3 }, { opacity: 1, scale: 1, rotate: 0, duration: 1 }, '-=0.9');
 
-      // Scroll-driven parallax + rotation on the hero visual: the
-      // boomerang spins along its own flight arc as the page scrolls.
+      // Scroll-driven parallax on the hero visual: a subtle drift as the
+      // page scrolls, not a dramatic spin.
       gsap.to(visualRef.current, {
-        y: 80,
-        rotate: 25,
+        y: 30,
+        rotate: 6,
         scrollTrigger: {
           trigger: root,
           start: 'top top',
           end: 'bottom top',
-          scrub: 1,
+          scrub: 1.2,
         },
       });
 
