@@ -66,21 +66,13 @@ body {
   color: var(--chalk);
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
 }
-/* Restore native cursor on touch/mobile - JS also guards this */
-@media (pointer: coarse) {
-  body { cursor: auto; }
-  .cursor, .cursor-ring { display: none !important; }
-}
-a { color: inherit; text-decoration: none; cursor: none; }
+a { color: inherit; text-decoration: none; cursor: pointer; }
 img { max-width: 100%; display: block; }
 ul, ol { list-style: none; }
-button { cursor: none; font-family: var(--ff-body); border: none; background: none; }
-input, select, textarea { font-family: var(--ff-body); cursor: none; }
-@media (pointer: coarse) {
-  a, button, input, select, textarea { cursor: auto; }
-}
+button { cursor: pointer; font-family: var(--ff-body); border: none; background: none; }
+input, select, textarea { font-family: var(--ff-body); cursor: auto; }
 
 /* ---- Typography ---- */
 .t-display { font-family: var(--ff-display); font-weight: 800; line-height: 1.05; }
@@ -388,7 +380,7 @@ input, select, textarea { font-family: var(--ff-body); cursor: none; }
   transform: translateY(-50%);
   width: min(600px, 50vw);
 }
-.hero-boomerang-svg {
+.hero-boomerang-photo {
   width: 100%;
   animation: float 6s ease-in-out infinite;
   filter: drop-shadow(0 0 60px rgba(232,160,32,0.3));
@@ -2205,35 +2197,6 @@ footer {
 .page-header-sub { font-size: 0.9375rem; color: var(--chalk-dim); }
 
 /* =============================
-   CURSOR
-   ============================= */
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--ochre);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
-  mix-blend-mode: difference;
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1.5px solid rgba(232,160,32,0.5);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, transform 0.12s ease;
-}
-body:has(a:hover) .cursor,
-body:has(button:hover) .cursor {
-  width: 16px; height: 16px;
-}
-
-/* =============================
    LOADING SCREEN
    ============================= */
 #loading-screen {
@@ -2829,11 +2792,4 @@ a:focus:not(:focus-visible) {
    Restores the native cursor on touch/coarse pointer devices where
    the custom cursor dot would otherwise never render.
    ============================= */
-@media (pointer: coarse) {
-  body, a, button, input, select, textarea {
-    cursor: auto;
-  }
-  .cursor, .cursor-ring {
-    display: none;
-  }
-}
+

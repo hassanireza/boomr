@@ -29,7 +29,7 @@ const CategoryCard: React.FC<{ name: string; slug: string; imageKey: string; cou
     >
       <div className="product-card-image" style={{ aspectRatio: '1.2' }}>
         <img
-          src={`${import.meta.env.BASE_URL}images/products/${imageKey}-1.png`}
+          src={`${import.meta.env.BASE_URL}images/products/${imageKey}-main.webp`}
           alt={name}
           style={{ width: '55%', height: '55%', objectFit: 'contain', margin: '0 auto' }}
           loading="lazy"

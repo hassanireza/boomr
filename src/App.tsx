@@ -5,7 +5,6 @@ import { AnnouncementBar } from './components/layout/AnnouncementBar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
 import { LoadingScreen } from './components/layout/LoadingScreen';
-import { CustomCursor } from './components/layout/CustomCursor';
 import { OverlayBackdrop } from './components/common/OverlayBackdrop';
 import { ToastContainer } from './components/common/ToastContainer';
 import { ScrollRestoration } from './components/common/ScrollRestoration';
@@ -31,7 +30,6 @@ const App: React.FC = () => {
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <CustomCursor />
       <LoadingScreen />
       <ToastContainer />
       <OverlayBackdrop />

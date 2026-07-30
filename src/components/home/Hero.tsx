@@ -119,8 +119,8 @@ export const Hero: React.FC = () => {
         <div className="hero-orbit" />
         <div className="hero-orbit-2" />
         <img
-          className="hero-boomerang-svg"
-          src={`${import.meta.env.BASE_URL}images/ui/hero-boomerang.png`}
+          className="hero-boomerang-photo"
+          src={`${import.meta.env.BASE_URL}images/products/v-shape-main.webp`}
           alt="BOOMR. signature boomerang"
           loading="eager"
           fetchPriority="high"

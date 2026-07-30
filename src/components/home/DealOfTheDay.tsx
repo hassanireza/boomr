@@ -90,7 +90,7 @@ export const DealOfTheDay: React.FC = () => {
           </div>
           <div ref={imgRef} className="deal-image-wrapper reveal reveal-delay-2">
             <img
-              src={`${import.meta.env.BASE_URL}images/ui/deal-featured.png`}
+              src={`${import.meta.env.BASE_URL}images/products/question-mark-main.webp`}
               alt="Riddle Curve QM, deal of the day"
               style={{ width: '80%', height: '80%', objectFit: 'contain', display: 'block', margin: '0 auto' }}
               loading="eager"
