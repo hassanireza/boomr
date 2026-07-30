@@ -49,8 +49,8 @@ export const BrandStory: React.FC = () => {
           <div ref={visualRef} className="story-visual reveal reveal-delay-2">
             <img
               className="story-big-boomerang"
-              src={`${import.meta.env.BASE_URL}images/products/ring-detail.webp`}
-              alt="Handcrafted boomerang"
+              src={`${import.meta.env.BASE_URL}images/products/hook-detail.webp`}
+              alt="Hawk Hook Elite boomerang"
               loading="lazy"
               draggable={false}
             />
