@@ -23,8 +23,8 @@ export const LoadingScreen: React.FC = () => {
       <svg className="loader-boomerang" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#e8a020" />
-            <stop offset="100%" stopColor="#b07a10" />
+            <stop offset="0%" stopColor="#ff5a2e" />
+            <stop offset="100%" stopColor="#c23c1a" />
           </linearGradient>
         </defs>
         <path d="M12 64 L40 16 L68 64 L60 64 L40 30 L20 64Z" fill="url(#lg)" />

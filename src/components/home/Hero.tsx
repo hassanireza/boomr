@@ -118,14 +118,28 @@ export const Hero: React.FC = () => {
       <div className="hero-visual" aria-hidden="true" ref={visualRef}>
         <div className="hero-orbit" />
         <div className="hero-orbit-2" />
-        <img
-          className="hero-boomerang-photo"
-          src={`${import.meta.env.BASE_URL}images/products/v-shape-main.webp`}
-          alt="BOOMR. signature boomerang"
-          loading="eager"
-          fetchPriority="high"
-          draggable={false}
-        />
+        <svg className="hero-boomerang-art" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hero-boomerang-g" x1="10%" y1="0%" x2="90%" y2="100%">
+              <stop offset="0%" stopColor="#ff8b5e" />
+              <stop offset="55%" stopColor="#ff5a2e" />
+              <stop offset="100%" stopColor="#b23015" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M118 336L196 88a30 30 0 0 1 56 1l72 213-46 2-63-190-58 193-15 46z"
+            fill="url(#hero-boomerang-g)"
+          />
+          <path
+            d="M52 318Q210 372 348 236"
+            fill="none"
+            stroke="var(--info)"
+            strokeWidth="2"
+            strokeDasharray="2 10"
+            strokeLinecap="round"
+            opacity="0.55"
+          />
+        </svg>
       </div>
     </section>
   );

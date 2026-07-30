@@ -18,7 +18,7 @@ const TESTIMONIALS: Testimonial[] = [
     initials: 'JK',
     name: 'Jordan Kim',
     sub: 'World Ranking Competitor, Seoul',
-    color: 'rgba(232,160,32,0.2)',
+    color: 'rgba(255,90,46,0.2)',
   },
   {
     stars: 5,
@@ -26,7 +26,7 @@ const TESTIMONIALS: Testimonial[] = [
     initials: 'AM',
     name: 'Amara Mensah',
     sub: 'Parent, London',
-    color: 'rgba(91,156,246,0.2)',
+    color: 'rgba(56,224,200,0.2)',
   },
   {
     stars: 5,
@@ -50,7 +50,7 @@ const TESTIMONIALS: Testimonial[] = [
     initials: 'DW',
     name: 'Dylan Walsh',
     sub: 'Competition Thrower, Sydney',
-    color: 'rgba(232,160,32,0.2)',
+    color: 'rgba(255,90,46,0.2)',
   },
   {
     stars: 5,
@@ -58,7 +58,7 @@ const TESTIMONIALS: Testimonial[] = [
     initials: 'NA',
     name: 'Nadia Al-Rashid',
     sub: 'Beginner Thrower, Dubai',
-    color: 'rgba(91,156,246,0.2)',
+    color: 'rgba(56,224,200,0.2)',
   },
 ];
 
