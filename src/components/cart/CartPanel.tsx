@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CloseIcon } from '../common/Icons';
+import { CloseIcon, CartIcon, TrashIcon } from '../common/Icons';
 import { useCart } from '../../hooks/useCart';
 import { useUI } from '../../hooks/useUI';
 import { useToast } from '../../hooks/useToast';
@@ -36,7 +36,7 @@ export const CartPanel: React.FC = () => {
       <div className="panel-body" id="cart-body">
         {items.length === 0 ? (
           <div className="cart-empty">
-            <div className="cart-empty-icon">🛒</div>
+            <div className="cart-empty-icon"><CartIcon size={40} /></div>
             <div className="cart-empty-text">Your cart is empty</div>
             <div className="cart-empty-sub">Add some boomerangs to get started</div>
             <button
@@ -74,7 +74,7 @@ export const CartPanel: React.FC = () => {
                 </div>
               </div>
               <button className="cart-item-remove" onClick={() => remove(item.key)} aria-label="Remove item">
-                🗑
+                <TrashIcon size={15} />
               </button>
             </div>
           ))

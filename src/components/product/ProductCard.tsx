@@ -5,6 +5,7 @@ import { useCart } from '../../hooks/useCart';
 import { useWishlist } from '../../hooks/useWishlist';
 import { useToast } from '../../hooks/useToast';
 import { useReveal } from '../../hooks/useReveal';
+import { HeartIcon, StarIcon } from '../common/Icons';
 
 interface ProductCardProps {
   product: Product;
@@ -56,7 +57,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, revealDelay }
           aria-label={wished ? 'Remove from wishlist' : 'Add to wishlist'}
           onClick={handleToggleWishlist}
         >
-          ❤
+          <HeartIcon size={15} />
         </button>
         <img
           src={`${import.meta.env.BASE_URL}${product.primaryImage}`}
@@ -82,7 +83,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, revealDelay }
           <div className="stars">
             {stars.map((filled, i) => (
               <span key={i} className={`star${filled ? '' : ' empty'}`}>
-                ★
+                <StarIcon size={13} filled={filled} />
               </span>
             ))}
           </div>

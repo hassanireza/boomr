@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BoomrLogoMark } from '../common/Icons';
+import { BoomrLogoMark, InstagramIcon, YoutubeIcon, XIcon, TiktokIcon } from '../common/Icons';
 import { useToast } from '../../hooks/useToast';
 
 export const Footer: React.FC = () => {
@@ -31,10 +31,10 @@ export const Footer: React.FC = () => {
               since 2008.
             </p>
             <div className="social-links" aria-label="Social media links">
-              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="Instagram">📷</a>
-              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="YouTube">🎬</a>
-              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="Twitter / X">𝕏</a>
-              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="TikTok">🎵</a>
+              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="Instagram"><InstagramIcon size={17} /></a>
+              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="YouTube"><YoutubeIcon size={17} /></a>
+              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="Twitter / X"><XIcon size={15} /></a>
+              <a href="#" className="social-link" onClick={(e) => { e.preventDefault(); info('Follow us', '@boomrofficial on all platforms'); }} aria-label="TikTok"><TiktokIcon size={17} /></a>
             </div>
             <div className="payment-icons" aria-label="Accepted payment methods">
               <div className="payment-icon" title="Visa">VISA</div>

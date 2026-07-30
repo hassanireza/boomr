@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CloseIcon, BoomrLogoMark } from '../common/Icons';
+import { CloseIcon, BoomrLogoMark, EyeIcon, EyeOffIcon } from '../common/Icons';
 import { useUI } from '../../hooks/useUI';
 import { useAuth } from '../../hooks/useAuth';
 import { useToast } from '../../hooks/useToast';
@@ -94,7 +94,7 @@ export const LoginModal: React.FC = () => {
                   onChange={(event) => setLoginPw(event.target.value)}
                 />
                 <span className="pw-toggle" onClick={() => setShowPw((s) => !s)} title="Show/hide password">
-                  {showPw ? '🙈' : '👁'}
+                  {showPw ? <EyeOffIcon size={16} /> : <EyeIcon size={16} />}
                 </span>
               </div>
             </div>
@@ -184,7 +184,7 @@ export const LoginModal: React.FC = () => {
                   onChange={(event) => setRegPw(event.target.value)}
                 />
                 <span className="pw-toggle" onClick={() => setShowPw((s) => !s)} title="Show/hide password">
-                  {showPw ? '🙈' : '👁'}
+                  {showPw ? <EyeOffIcon size={16} /> : <EyeIcon size={16} />}
                 </span>
               </div>
               <div className="form-hint">Must be at least 8 characters with a number.</div>

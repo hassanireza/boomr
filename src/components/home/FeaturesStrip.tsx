@@ -1,19 +1,20 @@
 import React from 'react';
 import { useReveal } from '../../hooks/useReveal';
+import { PackageIcon, ReturnIcon, LockIcon, TrophyIcon } from '../common/Icons';
 
 const FEATURES = [
-  { icon: '📦', title: 'Free Shipping $100+', desc: 'Express and overnight options available worldwide.' },
-  { icon: '↩️', title: '30-Day Returns', desc: 'Full refund on unused items, no questions asked.' },
-  { icon: '🔒', title: 'Secure Payments', desc: '256-bit SSL encryption on every transaction.' },
-  { icon: '🏆', title: 'Expert Craftsmanship', desc: '2,000+ test throws before each product ships.' },
+  { icon: PackageIcon, title: 'Free Shipping $100+', desc: 'Express and overnight options available worldwide.' },
+  { icon: ReturnIcon, title: '30-Day Returns', desc: 'Full refund on unused items, no questions asked.' },
+  { icon: LockIcon, title: 'Secure Payments', desc: '256-bit SSL encryption on every transaction.' },
+  { icon: TrophyIcon, title: 'Expert Craftsmanship', desc: '2,000+ test throws before each product ships.' },
 ];
 
-const FeatureItem: React.FC<{ icon: string; title: string; desc: string; delay: number }> = ({ icon, title, desc, delay }) => {
+const FeatureItem: React.FC<{ icon: React.FC<{ size?: number }>; title: string; desc: string; delay: number }> = ({ icon: Icon, title, desc, delay }) => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <div ref={ref} className={`feature-item reveal${delay ? ` reveal-delay-${delay}` : ''}`}>
       <div className="feature-icon" aria-hidden="true">
-        {icon}
+        <Icon size={22} />
       </div>
       <div>
         <div className="feature-title">{title}</div>

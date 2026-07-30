@@ -1,9 +1,9 @@
 import React from 'react';
 
 const COUNTRIES = [
-  '🇺🇸 USA', '🇬🇧 UK', '🇦🇺 Australia', '🇨🇦 Canada', '🇩🇪 Germany', '🇫🇷 France',
-  '🇯🇵 Japan', '🇰🇷 South Korea', '🇧🇷 Brazil', '🇲🇽 Mexico', '🇮🇹 Italy', '🇪🇸 Spain',
-  '🇳🇿 New Zealand', '🇸🇪 Sweden', '🇳🇴 Norway', '🇩🇰 Denmark', '🇿🇦 South Africa', '🇮🇳 India',
+  'USA', 'UK', 'Australia', 'Canada', 'Germany', 'France',
+  'Japan', 'South Korea', 'Brazil', 'Mexico', 'Italy', 'Spain',
+  'New Zealand', 'Sweden', 'Norway', 'Denmark', 'South Africa', 'India',
   '+ 42 more',
 ];
 

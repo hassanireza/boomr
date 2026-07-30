@@ -1,5 +1,6 @@
 import React from 'react';
 import { useReveal } from '../../hooks/useReveal';
+import { StarIcon } from '../common/Icons';
 
 interface Testimonial {
   stars: number;
@@ -68,7 +69,7 @@ const TestimonialCard: React.FC<Testimonial & { delay: number }> = ({ stars, tex
       <div className="testimonial-stars" aria-label={`${stars} stars`}>
         {Array.from({ length: 5 }, (_, i) => (
           <span key={i} className={`star${i < stars ? '' : ' empty'}`}>
-            ★
+            <StarIcon size={14} filled={i < stars} />
           </span>
         ))}
       </div>

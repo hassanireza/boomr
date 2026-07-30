@@ -1,5 +1,5 @@
 import React from 'react';
-import { CloseIcon } from '../common/Icons';
+import { CloseIcon, HeartIcon, XIcon } from '../common/Icons';
 import { useWishlist } from '../../hooks/useWishlist';
 import { useCart } from '../../hooks/useCart';
 import { useUI } from '../../hooks/useUI';
@@ -30,7 +30,7 @@ export const WishlistPanel: React.FC = () => {
       <div className="panel-body" id="wishlist-body">
         {products.length === 0 ? (
           <div className="cart-empty">
-            <div className="cart-empty-icon">❤️</div>
+            <div className="cart-empty-icon"><HeartIcon size={40} /></div>
             <div className="cart-empty-text">Your wishlist is empty</div>
             <div className="cart-empty-sub">Save items you love for later</div>
           </div>
@@ -65,7 +65,7 @@ export const WishlistPanel: React.FC = () => {
                   onClick={() => remove(product.id)}
                   aria-label="Remove from wishlist"
                 >
-                  ✕
+                  <XIcon size={13} />
                 </button>
               </div>
             </div>

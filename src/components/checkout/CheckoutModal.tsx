@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CloseIcon } from '../common/Icons';
+import { CloseIcon, LockIcon } from '../common/Icons';
 import { useUI } from '../../hooks/useUI';
 import { useCart } from '../../hooks/useCart';
 import { useToast } from '../../hooks/useToast';
@@ -275,11 +275,11 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ onOrderPlaced }) =
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16, fontSize: '0.8125rem', color: 'var(--chalk-dim)' }}>
-                <span style={{ color: 'var(--success)', fontSize: '1rem' }}>🔒</span>
+                <LockIcon size={15} style={{ color: 'var(--success)' }} />
                 Your payment information is encrypted with 256-bit SSL
               </div>
-              <button className="btn btn-primary btn-lg" style={{ width: '100%' }} onClick={handlePlaceOrder} type="button">
-                🔒 Place Order
+              <button className="btn btn-primary btn-lg" style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }} onClick={handlePlaceOrder} type="button">
+                <LockIcon size={15} /> Place Order
               </button>
             </form>
           </div>

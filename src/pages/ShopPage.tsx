@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useCatalog } from '../hooks/useCatalog';
 import { ProductCard } from '../components/product/ProductCard';
 import { SortOption } from '../core/services/ProductCatalog';
+import { GridIcon, ListIcon, CartIcon } from '../components/common/Icons';
 
 const CATEGORY_LABELS: Record<string, string> = {
   'v-shaped': 'Traditional V',
@@ -148,17 +149,19 @@ export const ShopPage: React.FC = () => {
                 </select>
                 <div className="view-toggle">
                   <button className="view-btn active" title="Grid view">
-                    ▦
+                    <GridIcon size={15} />
                   </button>
                   <button className="view-btn" title="List view">
-                    ☰
+                    <ListIcon size={15} />
                   </button>
                 </div>
               </div>
             </div>
             {results.length === 0 ? (
               <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '60px 0', color: 'var(--chalk-dim)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: 16 }}>🛒</div>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: 'var(--chalk-dim)' }}>
+                  <CartIcon size={40} />
+                </div>
                 <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 700, color: 'var(--chalk)', marginBottom: 8 }}>
                   No products found
                 </div>

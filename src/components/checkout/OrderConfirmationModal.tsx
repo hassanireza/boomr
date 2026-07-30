@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUI } from '../../hooks/useUI';
 import { useToast } from '../../hooks/useToast';
 import { Order } from '../../core/services/OrderService';
+import { CheckIcon } from '../common/Icons';
 
 interface OrderConfirmationModalProps {
   order: Order | null;
@@ -28,11 +29,10 @@ export const OrderConfirmationModal: React.FC<OrderConfirmationModalProps> = ({ 
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 24px',
-            fontSize: '2rem',
             color: 'var(--success)',
           }}
         >
-          ✓
+          <CheckIcon size={32} />
         </div>
         <h2 className="modal-title">Order Confirmed!</h2>
         <p className="modal-subtitle">Thank you for your purchase. Your boomerangs are being prepared with care.</p>

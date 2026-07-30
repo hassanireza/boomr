@@ -1,11 +1,11 @@
 import React from 'react';
 import { useToast } from '../../hooks/useToast';
-import { CloseIcon } from './Icons';
+import { CloseIcon, CheckIcon, XIcon } from './Icons';
 
-const ICONS: Record<string, string> = {
-  success: '✓',
-  error: '✕',
-  info: 'i',
+const renderToastIcon = (type: string) => {
+  if (type === 'error') return <XIcon size={13} />;
+  if (type === 'info') return <span style={{ fontFamily: 'var(--ff-mono)', fontWeight: 700 }}>i</span>;
+  return <CheckIcon size={13} />;
 };
 
 export const ToastContainer: React.FC = () => {
@@ -16,7 +16,7 @@ export const ToastContainer: React.FC = () => {
       {toasts.map((toast) => (
         <div key={toast.id} className="toast show" role="status">
           <div className={`toast-icon ${toast.type}`} aria-hidden="true">
-            {ICONS[toast.type] ?? '✓'}
+            {renderToastIcon(toast.type)}
           </div>
           <div className="toast-body">
             <div className="toast-title">{toast.title}</div>

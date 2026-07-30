@@ -6,6 +6,7 @@ import { useUI } from '../../hooks/useUI';
 import { useToast } from '../../hooks/useToast';
 import { useCountdown } from '../../hooks/useCountdown';
 import { useReveal } from '../../hooks/useReveal';
+import { BoltIcon } from '../common/Icons';
 
 export const DealOfTheDay: React.FC = () => {
   const catalog = useCatalog();
@@ -25,8 +26,8 @@ export const DealOfTheDay: React.FC = () => {
       <div className="container">
         <div className="deal-wrapper">
           <div ref={textRef} className="reveal">
-            <div className="deal-badge" aria-label="Deal of the day">
-              ⚡ Deal of the Day
+            <div className="deal-badge" aria-label="Deal of the day" style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+              <BoltIcon size={14} /> Deal of the Day
             </div>
             <h2 id="deal-heading" className="deal-title t-display">
               Riddle Curve QM

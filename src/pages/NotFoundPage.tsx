@@ -1,11 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BoomerangIcon } from '../components/common/Icons';
 
 export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="container" style={{ marginTop: 140, textAlign: 'center', paddingBottom: 100 }}>
-      <div style={{ fontSize: '4rem', marginBottom: 16 }}>🪃</div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: 'var(--ochre)' }}>
+        <BoomerangIcon size={56} />
+      </div>
       <h1 className="t-display" style={{ fontSize: '2rem' }}>
         This page did not return.
       </h1>

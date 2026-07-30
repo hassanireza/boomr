@@ -6,6 +6,7 @@ import { useWishlist } from '../hooks/useWishlist';
 import { useToast } from '../hooks/useToast';
 import { useUI } from '../hooks/useUI';
 import { ProductCard } from '../components/product/ProductCard';
+import { CartIcon, HeartIcon, CheckIcon, PackageIcon, TagIcon, ReturnIcon, StarIcon } from '../components/common/Icons';
 
 type Tab = 'description' | 'specs' | 'reviews' | 'shipping';
 
@@ -136,7 +137,7 @@ export const ProductPage: React.FC = () => {
               <div className="stars">
                 {stars.map((filled, i) => (
                   <span key={i} className={`star${filled ? '' : ' empty'}`}>
-                    ★
+                    <StarIcon size={14} filled={filled} />
                   </span>
                 ))}
               </div>
@@ -196,7 +197,7 @@ export const ProductPage: React.FC = () => {
                   open('cart');
                 }}
               >
-                🛒 Add to Cart
+                <CartIcon size={16} /> Add to Cart
               </button>
               <button
                 className={`btn btn-outline btn-icon${wished ? ' active' : ''}`}
@@ -207,37 +208,37 @@ export const ProductPage: React.FC = () => {
                   show(nowSaved ? 'Saved to wishlist' : 'Removed from wishlist', product.name, nowSaved ? 'success' : 'info');
                 }}
               >
-                ❤
+                <HeartIcon size={16} />
               </button>
             </div>
 
             <div className="trust-row">
               <div className="trust-item">
-                <span className="ti">✓</span> In Stock
+                <span className="ti"><CheckIcon size={13} /></span> In Stock
               </div>
               <div className="trust-item">
-                <span className="ti">✓</span> Free returns 30 days
+                <span className="ti"><CheckIcon size={13} /></span> Free returns 30 days
               </div>
               <div className="trust-item">
-                <span className="ti">✓</span> Secure checkout
+                <span className="ti"><CheckIcon size={13} /></span> Secure checkout
               </div>
             </div>
 
             <div className="product-meta">
               <div className="meta-row">
-                <span className="meta-icon">📦</span>
+                <span className="meta-icon"><PackageIcon size={15} /></span>
                 <span>
                   Ships in <strong>1-3 business days</strong> worldwide
                 </span>
               </div>
               <div className="meta-row">
-                <span className="meta-icon">📦</span>
+                <span className="meta-icon"><PackageIcon size={15} /></span>
                 <span>
                   SKU: <strong>{product.sku}</strong>
                 </span>
               </div>
               <div className="meta-row">
-                <span className="meta-icon">🏷</span>
+                <span className="meta-icon"><TagIcon size={15} /></span>
                 <span>
                   Tags:{' '}
                   {product.tags.map((tag) => (
@@ -308,7 +309,7 @@ export const ProductPage: React.FC = () => {
                   <div className="stars" style={{ justifyContent: 'center', margin: '8px 0' }}>
                     {stars.map((filled, i) => (
                       <span key={i} className={`star${filled ? '' : ' empty'}`}>
-                        ★
+                        <StarIcon size={14} filled={filled} />
                       </span>
                     ))}
                   </div>
@@ -336,7 +337,7 @@ export const ProductPage: React.FC = () => {
                           <div className="stars" style={{ marginTop: 4 }}>
                             {Array.from({ length: 5 }, (_, i) => (
                               <span key={i} className={`star${i < review.rating ? '' : ' empty'}`}>
-                                ★
+                                <StarIcon size={13} filled={i < review.rating} />
                               </span>
                             ))}
                           </div>
@@ -344,7 +345,7 @@ export const ProductPage: React.FC = () => {
                         <div className="review-date">{review.date}</div>
                       </div>
                       <p className="review-body">{review.text}</p>
-                      {review.verified && <div className="review-verified">✓ Verified Purchase</div>}
+                      {review.verified && <div className="review-verified" style={{ display: 'flex', alignItems: 'center', gap: 6 }}><CheckIcon size={12} /> Verified Purchase</div>}
                     </div>
                   ))}
                 </div>
@@ -356,23 +357,23 @@ export const ProductPage: React.FC = () => {
             <div className="tab-panel active">
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 720 }}>
                 <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: 24 }}>
-                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 700, color: 'var(--chalk)', marginBottom: 12 }}>📦 Shipping</div>
+                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 700, color: 'var(--chalk)', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 8 }}><PackageIcon size={16} /> Shipping</div>
                   <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: '0.875rem', color: 'var(--chalk-dim)' }}>
-                    <li>✓ Standard (5-7 days): $9.99</li>
-                    <li>✓ Express (2-3 days): $19.99</li>
-                    <li>✓ Overnight: $34.99</li>
-                    <li>✓ Free on orders over $100</li>
-                    <li>✓ Ships to 60+ countries</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Standard (5-7 days): $9.99</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Express (2-3 days): $19.99</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Overnight: $34.99</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Free on orders over $100</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Ships to 60+ countries</li>
                   </ul>
                 </div>
                 <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: 24 }}>
-                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 700, color: 'var(--chalk)', marginBottom: 12 }}>↩️ Returns</div>
+                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 700, color: 'var(--chalk)', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 8 }}><ReturnIcon size={16} /> Returns</div>
                   <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: '0.875rem', color: 'var(--chalk-dim)' }}>
-                    <li>✓ 30-day return window</li>
-                    <li>✓ Full refund on unused items</li>
-                    <li>✓ Free return label provided</li>
-                    <li>✓ Exchange for any product</li>
-                    <li>✓ Defect warranty: 1 year</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> 30-day return window</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Full refund on unused items</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Free return label provided</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Exchange for any product</li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: 8 }}><CheckIcon size={12} /> Defect warranty: 1 year</li>
                   </ul>
                 </div>
               </div>
