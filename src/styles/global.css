@@ -221,7 +221,7 @@ input, select, textarea { font-family: var(--ff-body); cursor: auto; }
   background: var(--ochre);
   color: var(--midnight);
   text-align: center;
-  padding: 8px 16px;
+  padding: 8px 40px 8px 16px;
   font-size: 0.8125rem;
   font-weight: 600;
   font-family: var(--ff-display);
@@ -235,14 +235,18 @@ input, select, textarea { font-family: var(--ff-body); cursor: auto; }
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
+.announcement-bar .announcement-short { display: none; }
 .announcement-bar a {
   text-decoration: underline;
   color: var(--midnight);
+  flex-shrink: 0;
 }
 .announcement-bar .close-bar {
   position: absolute;
-  right: 16px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -375,40 +379,33 @@ input, select, textarea { font-family: var(--ff-body); cursor: auto; }
 }
 .hero-visual {
   position: absolute;
-  right: -20px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  width: min(480px, 42vw);
+  width: min(460px, 40vw);
   max-width: 100%;
   z-index: 1;
   pointer-events: none;
 }
-.hero-boomerang-art {
+.hero-visual-inner {
+  width: 100%;
+}
+.hero-throw-guide {
   width: 100%;
   height: auto;
   display: block;
-  animation: float 8s ease-in-out infinite;
-  filter: drop-shadow(0 30px 60px rgba(255,90,46,0.22));
+  filter: drop-shadow(0 30px 60px rgba(255,90,46,0.18));
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1.5deg); }
+.hero-guide-lbl {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  fill: var(--chalk-dim);
 }
-.hero-orbit {
-  position: absolute;
-  inset: -80px;
-  border: 1px dashed rgba(255,90,46,0.14);
-  border-radius: 50%;
-  animation: orbit-spin 30s linear infinite;
+.hero-guide-lbl-strong {
+  fill: var(--chalk);
+  font-weight: 700;
 }
-.hero-orbit-2 {
-  position: absolute;
-  inset: -140px;
-  border: 1px dashed rgba(255,90,46,0.08);
-  border-radius: 50%;
-  animation: orbit-spin 50s linear infinite reverse;
-}
-@keyframes orbit-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 /* =============================
    BUTTONS
@@ -2331,6 +2328,9 @@ footer {
   .newsletter-form { flex-direction: column; }
 }
 @media (max-width: 700px) {
+  .announcement-bar { font-size: 0.7rem; padding: 6px 36px 6px 12px; letter-spacing: 0.01em; }
+  .announcement-bar .announcement-full { display: none; }
+  .announcement-bar .announcement-short { display: inline; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav-actions .btn-nav-cta { display: none; }

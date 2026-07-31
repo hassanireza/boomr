@@ -10,8 +10,13 @@ export const AnnouncementBar: React.FC = () => {
 
   return (
     <div className="announcement-bar" role="banner">
-      Free shipping on orders over $100 &nbsp;•&nbsp; Use code <strong>BOOMR20</strong> for 20% off your first order
-      &nbsp;•&nbsp;{' '}
+      <span className="announcement-full">
+        Free shipping on orders over $100 &nbsp;•&nbsp; Use code <strong>BOOMR20</strong> for 20% off your first order
+        &nbsp;•&nbsp;{' '}
+      </span>
+      <span className="announcement-short">
+        20% off with code <strong>BOOMR20</strong> &nbsp;•&nbsp;{' '}
+      </span>
       <a
         href="/shop"
         onClick={(event) => {
